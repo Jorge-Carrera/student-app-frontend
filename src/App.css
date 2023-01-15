@@ -1,0 +1,13 @@
+.App{
+  display: grid;
+
+  /* horizontal alignment */
+  justify-content: center;
+  
+  /* vertical alignment */
+  align-items: center;
+
+  height: 100vh;
+  background-color: #eee;
+}
+
