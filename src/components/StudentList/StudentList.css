@@ -1,2 +1,31 @@
+.StudentList {
+  height: inherit;
+}
+
+.StudentList__input {
+  padding-bottom: 40px;
+}
+
+.StudentList__input input {
+  margin: 0 8px;
+  padding: 16px 0 8px;
+  width: 59%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+}
 
 
+.StudentList__input input:focus {
+  border-color: #777;
+}
+
+.StudentList__content--center {
+  height: calc(100% - 24px);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  text-align: center;
+}

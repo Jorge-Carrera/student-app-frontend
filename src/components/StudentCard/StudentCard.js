@@ -18,7 +18,7 @@ const StudentCard = ({ student }) => {
   // Divide total by number of grades and assign to a var
   const average = total / numericGrades.length;
 
-  console.log(`<StudentCard /> rendered name=${firstName}`);
+  
   return (
     <div className="StudentCard" key={id}>
       <div className="StudentCard__avatar">
