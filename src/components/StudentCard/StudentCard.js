@@ -1,8 +1,11 @@
-import './StudentCard.css';
+import { useState } from "react";
+import "./StudentCard.css";
 
 const StudentCard = ({ student }) => {
   const { email, company, firstName, lastName, pic, grades, id, skill } =
     student;
+
+  const [expanded, setExpanded] = useState(false);  
 
   // Converted the grades to numbers
   const numericGrades = grades.map((grade) => Number(grade));
@@ -18,7 +21,6 @@ const StudentCard = ({ student }) => {
   // Divide total by number of grades and assign to a var
   const average = total / numericGrades.length;
 
-  
   return (
     <div className="StudentCard" key={id}>
       <div className="StudentCard__avatar">
@@ -34,6 +36,15 @@ const StudentCard = ({ student }) => {
           <li>Skill: {skill}</li>
           <li>Average: {average}%</li>
         </ul>
+        {expanded && <div className="StudentCard__grades">
+          <ul>
+            {grades.map((grade, index) => {
+              <li key={`${grade} - ${index}`}>
+                Test {index + 1}: {grade}%
+              </li>
+            })}
+          </ul>
+          </div>}
       </div>
     </div>
   );
