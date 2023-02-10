@@ -1,12 +1,10 @@
-import { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import "./StudentCard.css";
 
-const StudentCard = ({ student }) => {
+const StudentCard = ({ expanded, onClick, student  }) => {
   const { email, company, firstName, lastName, pic, grades, id, skill } =
     student;
 
-  const [expanded, setExpanded] = useState(false);
 
   // Converted the grades to numbers
   const numericGrades = grades.map((grade) => Number(grade));
@@ -42,17 +40,15 @@ const StudentCard = ({ student }) => {
             <ul>
               {grades.map((grade, index) => (
                 <li key={`${grade}-${index}`}>
-                  <span>Test {index + 1} :</span> <span>{grade}%</span> 
+                  <span>Test {index + 1} :</span> <span>{grade}%</span>
                 </li>
               ))}
             </ul>
           </div>
         )}
       </div>
-      <div className="StudenCard__controls">
-        <button onClick={() => setExpanded(!expanded)}>
-          {expanded ? <FaMinus/> : <FaPlus/>}
-        </button>
+      <div className="StudentCard__controls">
+        <button onClick={onClick}>{expanded ? <FaMinus /> : <FaPlus />}</button>
       </div>
     </div>
   );
